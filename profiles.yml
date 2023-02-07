@@ -3,7 +3,7 @@ jaffle_shop:
   outputs:
 
     dev:
-      dataset: dbt_bsousa
+      dataset: bv-ctgd-419815458-sdx.dbt_bsousa
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: us-east1
