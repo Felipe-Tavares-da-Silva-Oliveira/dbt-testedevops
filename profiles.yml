@@ -15,7 +15,7 @@ jaffle_shop:
       type: bigquery
 
     prod:
-      dataset: dvry_corp
+      dataset: bv-ctgd-419815458-sdx.dvry_corp
       job_execution_timeout_seconds: 300
       job_retries: 1
       location: us-east1
