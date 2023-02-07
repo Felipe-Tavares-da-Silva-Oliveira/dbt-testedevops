@@ -7,6 +7,7 @@ target: dev
       job_retries: 1
       location: us-east1
       method: service-account
+      keyfile: /secrets/dbt-service-keyfile
       priority: interactive
       project: bv-ctgd-419815458-sdx
       threads: 4
@@ -18,6 +19,7 @@ target: dev
       job_retries: 1
       location: us-east1
       method: service-account
+      keyfile: /secrets/dbt-service-keyfile
       priority: interactive
       project: bv-ctgd-419815458-sdx
       threads: 4
