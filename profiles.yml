@@ -1,6 +1,7 @@
 jaffle_shop:
-target: dev
+  target: dev
   outputs:
+
     dev:
       dataset: dbt_bsousa
       job_execution_timeout_seconds: 300
