@@ -1,0 +1,24 @@
+jaffle_shop:
+target: dev
+  outputs:
+    dev:
+      dataset: dbt_bsousa
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: us-east1
+      method: service-account
+      priority: interactive
+      project: bv-ctgd-419815458-sdx
+      threads: 4
+      type: bigquery
+
+    prd:
+      dataset: dvry_corp
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: us-east1
+      method: service-account
+      priority: interactive
+      project: bv-ctgd-419815458-sdx
+      threads: 4
+      type: bigquery
