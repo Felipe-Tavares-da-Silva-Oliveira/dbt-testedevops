@@ -4,7 +4,7 @@ config-version: 2
 version: '0.1'
 
 profile: 'jaffle_shop'
-docs-paths: gs://dbt_testeintegration
+docs-paths: ["docs"]
 
 model-paths: ["models"]
 seed-paths: ["seeds"]
