@@ -6,4 +6,4 @@ dbt debug --target dev --profiles-dir .
 dbt debug --target prod --profiles-dir .
 dbt run --target prod --profiles-dir .
 dbt test --target prod --profiles-dir .
-dbt docs --target dev generate --no-compile --profiles-dir .
+dbt docs generate --no-compile --target dev --profiles-dir .
