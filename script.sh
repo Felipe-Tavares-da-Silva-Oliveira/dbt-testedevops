@@ -9,3 +9,4 @@ dbt test --target prod --profiles-dir .
 dbt docs generate --no-compile --target dev --profiles-dir .
 
 ls ./target
+gsutil cp -r ./target gs://dbt_testeintegration
