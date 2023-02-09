@@ -8,7 +8,7 @@ dbt run --target prod --profiles-dir .
 dbt test --target prod --profiles-dir .
 dbt docs generate --no-compile --target dev --profiles-dir .
 
-current_path=`cat dbt_project.yml | grep -i name | awk -F: '{print $2}' | tr -d "\'"`
+current_path=`cat dbt_project.yml | grep -i name | awk -F: '{print $2}' | tr -d "\'" | tr -d "\''" | awk '{sub(" ","")}1'`
 echo "current path é $current_path"
 ls ./target
 ls /secrets/dbt-service-keyfile
