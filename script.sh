@@ -8,7 +8,11 @@ dbt run --target prod --profiles-dir .
 dbt test --target prod --profiles-dir .
 dbt docs generate --no-compile --target dev --profiles-dir .
 
+IFS=/
+current_path1=$(pwd)
+current_path2=${current_path1[-1]}
+
 ls ./target
 ls /secrets/dbt-service-keyfile
 gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
-gsutil cp -r ./target gs://dbt_testeintegration
+gsutil cp -r ./target/catalog.json gs://dbt_testeintegration/$current_path2
