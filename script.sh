@@ -13,4 +13,4 @@ echo "current path é $current_path"
 ls ./target
 ls /secrets/dbt-service-keyfile
 gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
-gsutil cp -r ./target/catalog.json gs://dbt_testeintegration/$current_path
+gsutil cp -r ./target/catalog.json gs://dbt_testeintegration/$current_path/
