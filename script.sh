@@ -9,4 +9,5 @@ dbt test --target prod --profiles-dir .
 dbt docs generate --no-compile --target dev --profiles-dir .
 
 ls ./target
+gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
 gsutil cp -r ./target gs://dbt_testeintegration
