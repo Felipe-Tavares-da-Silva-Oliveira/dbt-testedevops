@@ -12,10 +12,9 @@ current_path=`cat dbt_project.yml | grep -i name | awk -F: '{print $2}' | tr -d 
 echo "current path é $current_path"
 ls ./target
 pathbucket="gs://dbt_testeintegration/$current_path/"
-pathsource=`ls ./target/catalog.json`
 
-echo "source $pathsource"
 echo "bucket $pathbucket"
+
 gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
 
-gsutil cp $pathsource $pathbucket
+gsutil cp ./target/catalog.json $pathbucket
