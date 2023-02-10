@@ -12,6 +12,7 @@ jaffle_shop:
       priority: interactive
       project: bv-ctgd-419815458-sdx
       threads: 4
+      gcs_bucket: dbt_testeintegration
       type: bigquery
 
     prod:
@@ -24,4 +25,5 @@ jaffle_shop:
       priority: interactive
       project: bv-ctgd-419815458-sdx
       threads: 4
+      gcs_bucket: dbt_testeintegration
       type: bigquery
