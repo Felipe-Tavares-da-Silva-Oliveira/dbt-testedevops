@@ -11,6 +11,8 @@ dbt docs generate --no-compile --target dev --profiles-dir .
 current_path=`cat dbt_project.yml | grep -i name | awk -F: '{print $2}' | tr -d "\'" | tr -d "\''" | awk '{sub(" ","")}1'`
 echo "current path é $current_path"
 ls ./target
-ls /secrets/dbt-service-keyfile
+
 gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
-gsutil cp ./target/catalog.json "gs://dbt_testeintegration/$current_path/"
+
+pathbucket="gs://dbt_testeintegration/$current_path/"
+gsutil cp ./target/catalog.json pathbucket
