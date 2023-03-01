@@ -1,4 +1,6 @@
 #!/bin/sh
+gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
+
 dbt seed --target dev --profiles-dir .
 dbt seed --target prod --profiles-dir .
 dbt deps --profiles-dir .  # Pulls the most recent version of the dependencies listed in your packages.yml from git
@@ -14,7 +16,5 @@ ls ./target
 pathbucket="gs://dbt_testeintegration/$current_path/"
 
 echo "bucket $pathbucket"
-
-gcloud auth activate-service-account --key-file=/secrets/dbt-service-keyfile
 
 gsutil cp ./target/catalog.json $pathbucket
