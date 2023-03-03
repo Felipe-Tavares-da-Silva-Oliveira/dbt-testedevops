@@ -17,4 +17,6 @@ pathbucket="gs://dbt_testeintegration/$current_path/"
 
 echo "bucket $pathbucket"
 
+
+
 gsutil cp ./target/catalog.json $pathbucket
