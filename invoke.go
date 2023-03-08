@@ -18,6 +18,10 @@ cmd := exec.Command("/bin/sh", "script.sh")
 }
 
 func healthHandler(w http.ResponseWriter, r *http.Request){
+        if r.URL.Path != "/health" {
+                http.NotFound(w, r)
+                return
+        }
         log.Print("dbt: health check OK")
         w.WriteHeader(http.StatusOK)
 }
