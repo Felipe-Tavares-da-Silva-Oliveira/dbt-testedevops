@@ -1,12 +1,9 @@
-FROM golang:1.13 as builder
-WORKDIR /app
-COPY invoke.go ./
-RUN CGO_ENABLED=0 GOOS=linux go build -v -o server
-
 FROM ghcr.io/dbt-labs/dbt-bigquery:1.3.latest
 USER root
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 WORKDIR /dbt
-COPY --from=builder /app/server ./
 COPY script.sh ./
 COPY . ./
 
@@ -23,5 +20,4 @@ RUN mkdir -p /usr/local/gcloud \
 # Adding the package path to local
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
-
-ENTRYPOINT "./server"
+CMD ["gunicorn", "-w", "4", "-b", "0.0.0.0:8080", "app:app"]
